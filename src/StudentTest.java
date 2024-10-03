@@ -7,7 +7,7 @@ import java.util.List;
 import static org.testng.Assert.*;
 
 public class StudentTest {
-    List<Student> students = new ArrayList<>();
+    public static List<Student> students = new ArrayList<>();
 
     @Test
     public void testGetAvgRating() {
@@ -97,6 +97,7 @@ public class StudentTest {
 
         assertTrue(student3.betterStudent(student4),
                 student1 + " is not better than " + student2);
+        students.clear ();
     }
 
     @Test
@@ -119,6 +120,8 @@ public class StudentTest {
         student2.changeRating(51);
 
         assertEquals(Student.getAvgRating(), 33.0d, "Average rating is wrong");
+
+        students.clear ();
     }
 
     @Test
@@ -135,9 +138,9 @@ public class StudentTest {
                 "toString method does not contains student's rating");
     }
 
-    @AfterMethod
-    public void tearDown() {
-        students.forEach(Student :: removeStudent);
-        students.clear();
-    }
+//    @AfterMethod
+//    public void tearDown() {
+//        students.forEach(Student :: removeStudent);
+//        students.clear();
+//    }
 }
