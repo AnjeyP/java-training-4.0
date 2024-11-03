@@ -21,8 +21,11 @@ public class RegExpTest {
                 {" Invalid IP: 256.256.256.256!", ""},
                 {"invalid:256.256.256.256", ""},
                 {"valid IP: 255.255.255.255!", "255.255.255.255"},
-                {"invalid:255.255.255.255", "255.255.255.255"}
+                {"invalid:255.255.255.255", "255.255.255.255"},
                 // TODO add 2 more test data here
+                {"inet 127.0.0.1 netmask 0xff000000", "127.0.0.1"},
+                {"inet6 fe80::f837:b4ff:fee2:62ca%awdl0 prefixlen 64 scopeid 0x7 192.168.50.32 netmask 0xffffff00 broadcast","192.168.50.32"}
+
         };
     }
 
